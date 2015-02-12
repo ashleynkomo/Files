@@ -1,7 +1,8 @@
+import pickle
+
 def get_test_results():
-    test_results = []
-    for test in range(3):
-        test_results.append(int(input("Please enter a score: ")))
+    with open("test_data.dat", mode = "rb") as testData:
+        test_results = pickle.load(testData)
     return test_results
 
 def average_test_result(results):
@@ -22,3 +23,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
